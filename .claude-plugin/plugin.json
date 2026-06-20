@@ -1,0 +1,8 @@
+{
+  "name": "eng-audit",
+  "version": "0.1.0",
+  "description": "Audit recent code changes against nine engineering principles, with file:line findings and severity. Run at phase boundaries or via /eng-audit.",
+  "author": {
+    "name": "Justin Herrick"
+  }
+}

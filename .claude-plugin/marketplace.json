@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "eng-audit",
+  "description": "Audit code changes against nine engineering principles.",
+  "owner": {
+    "name": "Justin Herrick",
+    "url": "https://github.com/jah2488"
+  },
+  "plugins": [
+    {
+      "name": "eng-audit",
+      "description": "Nine-principle engineering audit: file:line findings, severity, worst-first.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

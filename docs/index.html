@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manifesto for Humane Software</title>
+<style>
+:root{--fg:#1a1a1a;--muted:#6b7280;--faint:#9aa0aa;--bg:#fff;--card:#f7f7f8;--border:#e5e7eb;--accent:#b45309}
+@media(prefers-color-scheme:dark){:root{--fg:#e7e7e9;--muted:#9ca3af;--faint:#6b7280;--bg:#141312;--card:#1f1e1c;--border:#2d2c29;--accent:#f59e0b}}
+*{box-sizing:border-box}
+body{font:17px/1.7 Georgia,"Iowan Old Style","Palatino Linotype",serif;color:var(--fg);background:var(--bg);max-width:680px;margin:0 auto;padding:4rem 1.5rem 6rem}
+header{text-align:center;margin-bottom:3rem}
+h1{font-size:2rem;font-weight:600;margin:0 0 .75rem;letter-spacing:-.01em}
+.rule{width:48px;height:2px;background:var(--accent);margin:1.25rem auto;border:0}
+.preamble{color:var(--muted);font-style:italic;font-size:1.05rem;max-width:34rem;margin:0 auto}
+.values{list-style:none;padding:0;margin:2.5rem 0;text-align:center}
+.values li{margin:1.15rem 0}
+.values .l{font-weight:600}
+.values .over{display:block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:.15rem 0}
+.values .r{color:var(--faint)}
+.caveat{text-align:center;color:var(--muted);font-style:italic;font-size:.95rem;max-width:34rem;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border)}
+h2{text-align:center;font-size:1.15rem;font-weight:600;margin:4rem 0 2rem;letter-spacing:.01em}
+.principle{display:flex;gap:1rem;margin:1.5rem 0;align-items:baseline}
+.num{font-size:.95rem;color:var(--accent);font-weight:700;min-width:2.4rem;text-align:right;flex-shrink:0;font-variant-numeric:tabular-nums}
+.principle p{margin:0}
+.principle .lead{font-weight:600}
+.principle .body{color:var(--muted);font-size:.97rem}
+.closing{margin:4rem auto 0;padding:1.75rem 0 0;border-top:1px solid var(--border);text-align:center;font-size:1.1rem;font-style:italic;max-width:36rem}
+.sig{margin-top:1.5rem;text-align:center;color:var(--faint);font-style:normal;font-size:.9rem;font-family:system-ui,sans-serif}
+.lineage{margin-top:3.5rem;text-align:center;font-family:system-ui,sans-serif;font-size:.78rem;line-height:2;color:var(--faint)}
+.lineage a{color:var(--faint);text-decoration:none;border-bottom:1px dotted var(--border)}
+.lineage a:hover{color:var(--accent)}
+.repo{margin-top:2rem;text-align:center;font-family:system-ui,sans-serif;font-size:.85rem}
+.repo a{color:var(--accent);text-decoration:none}
+.repo a:hover{border-bottom:1px solid var(--accent)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Manifesto for Humane Software</h1>
+  <hr class="rule">
+  <p class="preamble">We are uncovering better ways of building software by building it, and
+  by reading what others have built. Through that work we have come to value:</p>
+</header>
+
+<ul class="values">
+  <li><span class="l">Deleting code</span><span class="over">over</span><span class="r">adding code</span></li>
+  <li><span class="l">Visible coupling</span><span class="over">over</span><span class="r">clever indirection</span></li>
+  <li><span class="l">Pure functions</span><span class="over">over</span><span class="r">incidental state</span></li>
+  <li><span class="l">Boundaries that declare their effects</span><span class="over">over</span><span class="r">surprises buried deep</span></li>
+  <li><span class="l">The least astonishing path</span><span class="over">over</span><span class="r">novelty for its own sake</span></li>
+  <li><span class="l">Code that reads as a story</span><span class="over">over</span><span class="r">code that merely runs</span></li>
+  <li><span class="l">The reason <em>why</em></span><span class="over">over</span><span class="r">a narration of <em>what</em></span></li>
+  <li><span class="l">Tests we can trust</span><span class="over">over</span><span class="r">tests that merely exist</span></li>
+  <li><span class="l">Knowing the blast radius</span><span class="over">over</span><span class="r">shipping in the dark</span></li>
+</ul>
+
+<p class="caveat">That is, while there is value in the items on the right, we value the
+items on the left more.</p>
+
+<h2>Principles behind the manifesto</h2>
+
+<div class="principle"><span class="num">I</span><p><span class="lead">The best code is the code we did not write.</span> <span class="body">We prize what can be deleted without consequence over what is merely easy to change, and that over what must be rewritten when the world turns. New code arrives as a self-contained module with a narrow door.</span></p></div>
+
+<div class="principle"><span class="num">II</span><p><span class="lead">We keep coupling visible.</span> <span class="body">We name the connascence between our parts and prefer it weak and near. Naming is design; what we leave unwritten speaks as loudly as what we write.</span></p></div>
+
+<div class="principle"><span class="num">III</span><p><span class="lead">We prefer the functional to the imperative.</span> <span class="body">We reach for pure functions and referential transparency, and treat mutation as a deliberate exception, never the default, even in languages that invite otherwise.</span></p></div>
+
+<div class="principle"><span class="num">IV</span><p><span class="lead">We keep a functional core and an imperative shell.</span> <span class="body">Effects, input and output, and edge cases live at the boundary, declared in the open. The center stays pure, and full of decisions.</span></p></div>
+
+<div class="principle"><span class="num">V</span><p><span class="lead">We do not astonish.</span> <span class="body">Behavior matches what a reasonable person already expects. Where we can, we go past "not surprising" and actively delight the people who read our code and use our work.</span></p></div>
+
+<div class="principle"><span class="num">VI</span><p><span class="lead">Our methods tell a story.</span> <span class="body">They gather their inputs, do the work with confidence, deliver a result, and handle failure at the edges, read top to bottom, like prose.</span></p></div>
+
+<div class="principle"><span class="num">VII</span><p><span class="lead">Our comments explain why.</span> <span class="body">Rationale, constraint, the gotcha, the deliberate ugliness, never a narration of what the code already says.</span></p></div>
+
+<div class="principle"><span class="num">VIII</span><p><span class="lead">We hold our tests to the highest standard.</span> <span class="body">We test, and we maintain those tests with care, because a flaky or dishonest test is worse than none. Correctness first, then speed; a test that passes for the wrong reason is a liability.</span></p></div>
+
+<div class="principle"><span class="num">IX</span><p><span class="lead">We ship no unspoken side effects.</span> <span class="body">Before we change the system, we name who feels it downstream: other services, billing, data, CI, the person on call, and we surface the blast radius rather than hide it.</span></p></div>
+
+<p class="closing">Above all, we write for the next person to read this, often ourselves,
+having forgotten. We reduce what they must hold in their heads, and what they must undo.</p>
+
+<p class="sig">Justin Herrick, and anyone who builds this way</p>
+
+<p class="repo"><a href="https://github.com/jah2488/eng-audit">eng-audit</a> &nbsp;·&nbsp; a Claude Code skill that audits your changes against these principles &nbsp;·&nbsp; fused, with three other disciplines, into <a href="https://github.com/jah2488/flint">flint</a></p>
+
+<p class="lineage">
+  Standing on:
+  <a href="https://connascence.io">Connascence</a> ·
+  <a href="https://www.destroyallsoftware.com/screencasts/catalog/functional-core-imperative-shell">Functional Core, Imperative Shell</a> ·
+  <a href="https://en.wikipedia.org/wiki/Principle_of_least_astonishment">The Principle of Least Astonishment</a> ·
+  Avdi Grimm's <em>Confident Ruby</em>
+</p>
+</body>
+</html>
