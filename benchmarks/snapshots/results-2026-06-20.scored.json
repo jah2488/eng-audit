@@ -1,0 +1,195 @@
+{
+  "arms": [
+    "baseline",
+    "critical",
+    "eng-audit"
+  ],
+  "principles": [
+    "no unspoken side effects",
+    "write less code",
+    "handle failure at the edges (validation)",
+    "prefer functional over imperative",
+    "comments explain why, not what",
+    "tests to the highest standard",
+    "keep coupling visible (connascence of meaning)",
+    "keep coupling visible (connascence of position)",
+    "write less code (over-abstraction)"
+  ],
+  "recall": {
+    "baseline": {
+      "hit": 43,
+      "planted": 45,
+      "pct": 96
+    },
+    "critical": {
+      "hit": 44,
+      "planted": 45,
+      "pct": 98
+    },
+    "eng-audit": {
+      "hit": 42,
+      "planted": 45,
+      "pct": 93
+    }
+  },
+  "cleanFlag": {
+    "baseline": {
+      "flagged": 14,
+      "n": 30,
+      "pct": 47
+    },
+    "critical": {
+      "flagged": 10,
+      "n": 30,
+      "pct": 33
+    },
+    "eng-audit": {
+      "flagged": 3,
+      "n": 30,
+      "pct": 10
+    }
+  },
+  "byPrinciple": {
+    "baseline": {
+      "no unspoken side effects": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "write less code": {
+        "hit": 4,
+        "n": 5,
+        "pct": 80
+      },
+      "handle failure at the edges (validation)": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "prefer functional over imperative": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "comments explain why, not what": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "tests to the highest standard": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "keep coupling visible (connascence of meaning)": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "keep coupling visible (connascence of position)": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "write less code (over-abstraction)": {
+        "hit": 4,
+        "n": 5,
+        "pct": 80
+      }
+    },
+    "critical": {
+      "no unspoken side effects": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "write less code": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "handle failure at the edges (validation)": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "prefer functional over imperative": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "comments explain why, not what": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "tests to the highest standard": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "keep coupling visible (connascence of meaning)": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "keep coupling visible (connascence of position)": {
+        "hit": 4,
+        "n": 5,
+        "pct": 80
+      },
+      "write less code (over-abstraction)": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      }
+    },
+    "eng-audit": {
+      "no unspoken side effects": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "write less code": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "handle failure at the edges (validation)": {
+        "hit": 3,
+        "n": 5,
+        "pct": 60
+      },
+      "prefer functional over imperative": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "comments explain why, not what": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "tests to the highest standard": {
+        "hit": 4,
+        "n": 5,
+        "pct": 80
+      },
+      "keep coupling visible (connascence of meaning)": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "keep coupling visible (connascence of position)": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      },
+      "write less code (over-abstraction)": {
+        "hit": 5,
+        "n": 5,
+        "pct": 100
+      }
+    }
+  }
+}

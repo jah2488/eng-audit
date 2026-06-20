@@ -53,25 +53,50 @@ finding against the code, and tags severity:
 It leads with a headline (count + worst severity), lists findings worst-first grouped by principle,
 and ends by asking which to fix. Trivial fixes it may just do; judgment calls it asks about first.
 
-## Does it actually change the code?
+## Benchmark: catch the issues, clear the clean code
 
-eng-audit is one of four disciplines fused into [**flint**](https://github.com/jah2488/flint), where
-these principles run continuously rather than only at phase boundaries. flint's agentic benchmark is
-the closest measurement of the principles in action: real Claude Code sessions on a small repo,
-gated by a hidden acceptance test.
+A code-review skill earns its keep by finding real problems without burying you in false alarms.
+I measured both at once. Six small snippets carry planted violations of the principles (a leaked
+side effect, a dead function, a missing validation, an in-place mutation, a tautological test, a
+magic number, an over-abstraction). Six more are clean and documented. Three reviewers see each
+one: a plain code review, the same review told to "be thorough and critical," and eng-audit. One
+keyword detector scores all three identically, so the between-reviewer comparison is fair.
 
 <p align="center">
-  <img src="assets/agentic.svg" alt="agentic diff size: dueDate 32 to 24 lines, PATCH 25 to 7 lines, smaller at equal correctness" width="600">
+  <img src="assets/benchmark.svg" alt="recall vs false-alarm scatter: all three reviewers catch ~95% of planted violations; eng-audit flags clean code at 10% versus 47% baseline and 33% critical" width="600">
 </p>
 
-On the `PATCH` ticket, the principled run shipped a **72% smaller** diff at equal correctness by
-*reusing the existing validator and store helper* (7 lines) where the unconstrained run rebuilt more
-(25). That is principle 1 (write less, reuse over rebuild) and principle 2 (keep coupling local) made
-measurable. It is an n=3 pilot, attributed to flint (which embeds these principles, among others),
-not a standalone eng-audit score; the full methodology and caveats live in
-[flint's benchmarks](https://github.com/jah2488/flint/tree/main/benchmarks).
+Catching the planted violations is the easy part. All three reviewers land high, 93 to 98%; a
+careful review already finds an obvious dead function or a missing check. The reviewers separate
+on the clean code. Told to "be critical," the review manufactures defects on documented, correct
+snippets a third of the time, and a plain review does so on nearly half. It calls a documented
+`sum([])` a "critical issue, will crash on null," and a clamp with a stated contract "a bug."
+
+eng-audit flags clean code at **10%**. It reads a documented contract as intentional and reports
+"0 significant findings, this is clean" rather than inventing a problem to look thorough. It pays
+a small recall cost for that discipline (93% against 96 to 98%): when it is unsure, it holds back.
+That trade is the whole point. A reviewer you can trust to stay quiet on clean code is one whose
+warnings you actually read.
+
+_n=180 reviews on `claude-haiku-4-5`. The detector is keyword-based and applied identically to
+every arm, so it measures a floor, not a ceiling. This is single-snippet review; eng-audit's
+phase-boundary scoping over a real diff is not captured here. Reproduce it with
+[`benchmarks/`](benchmarks/)._
+
+## The benefit that compounds
+
+The benchmark scores one review of one snippet. The larger reason to run eng-audit is what it does
+to a codebase over time. Held to these principles, the model writes code that is easier to reason
+about. Fewer dead branches get left lying around. There is less duplication. Side effects sit at
+the edges where they stay visible. Code in that shape is also easier for the model itself to keep
+working in. It trips over its own earlier choices less often, and it writes itself into a corner
+less often, because the structure it left behind stays simple enough to extend. The advantage is
+slight on a single file and grows across a whole codebase. That compounding is the purpose of the
+audit at scale: keeping the code in a shape that both people and models can keep moving through.
 
 ## Lineage
 
 Connascence, functional-core / imperative-shell, the principle of least astonishment, and Avdi
-Grimm's *Confident Ruby* (principle 6). MIT licensed.
+Grimm's *Confident Ruby* (principle 6). eng-audit is also one of four disciplines fused into
+[flint](https://github.com/jah2488/flint), which runs them continuously rather than only at phase
+boundaries. MIT licensed.

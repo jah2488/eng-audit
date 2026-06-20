@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 404" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif" role="img" aria-label="eng-audit: high recall with the fewest false alarms on clean code"><style>.lbl{fill:#6b7280;font-size:12px}.sub{fill:#6b7280;font-size:13px;font-weight:700}.fv{fill:#b45309;font-size:12px;font-weight:700}.cap{fill:#9aa0a6;font-size:10px}.ax{fill:#6b7280;font-size:11px}</style>
+<text x="20" y="26" class="sub" font-size="15">Catch the real issues, without crying wolf</text>
+<text x="20" y="42" class="cap">y = planted-violation recall (higher better) · x = false-alarm rate on clean code (lower better) · the top-left corner is best</text>
+<line x1="70" y1="60" x2="70" y2="340" stroke="#eee" stroke-width="1"/>
+<text x="70" y="356" text-anchor="middle" class="cap">0%</text>
+<line x1="70" y1="340" x2="530" y2="340" stroke="#eee" stroke-width="1"/>
+<text x="62" y="344" text-anchor="end" class="cap">0%</text>
+<line x1="185" y1="60" x2="185" y2="340" stroke="#eee" stroke-width="1"/>
+<text x="185" y="356" text-anchor="middle" class="cap">25%</text>
+<line x1="70" y1="270" x2="530" y2="270" stroke="#eee" stroke-width="1"/>
+<text x="62" y="274" text-anchor="end" class="cap">25%</text>
+<line x1="300" y1="60" x2="300" y2="340" stroke="#eee" stroke-width="1"/>
+<text x="300" y="356" text-anchor="middle" class="cap">50%</text>
+<line x1="70" y1="200" x2="530" y2="200" stroke="#eee" stroke-width="1"/>
+<text x="62" y="204" text-anchor="end" class="cap">50%</text>
+<line x1="415" y1="60" x2="415" y2="340" stroke="#eee" stroke-width="1"/>
+<text x="415" y="356" text-anchor="middle" class="cap">75%</text>
+<line x1="70" y1="130" x2="530" y2="130" stroke="#eee" stroke-width="1"/>
+<text x="62" y="134" text-anchor="end" class="cap">75%</text>
+<line x1="530" y1="60" x2="530" y2="340" stroke="#eee" stroke-width="1"/>
+<text x="530" y="356" text-anchor="middle" class="cap">100%</text>
+<line x1="70" y1="60" x2="530" y2="60" stroke="#eee" stroke-width="1"/>
+<text x="62" y="64" text-anchor="end" class="cap">100%</text>
+<rect x="70" y="60" width="460" height="280" fill="none" stroke="#d8d8d8" stroke-width="1"/>
+<circle cx="286.2" cy="71.20000000000002" r="6" fill="#9aa0a6"/><text x="298.2" y="75.20000000000002" text-anchor="start" class="lbl">plain review (96% / 47%)</text>
+<circle cx="221.8" cy="65.60000000000001" r="6" fill="#9aa0a6"/><text x="233.8" y="69.60000000000001" text-anchor="start" class="lbl">review, be critical (98% / 33%)</text>
+<circle cx="116" cy="79.6" r="8" fill="#b45309"/><text x="106" y="83.6" text-anchor="end" class="fv">eng-audit (93% / 10%)</text>
+<text x="70" y="396" class="cap">claude-haiku-4-5, 3 arms. labels show (recall% / false-alarm%). detection keyword-based, equal across arms.</text></svg>
